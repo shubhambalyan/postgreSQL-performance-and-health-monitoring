@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['geochart']});
+      google.charts.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Country', 'Highest Point'],
+          ['Nepal', 8848],
+          ['Pakistan', 8611],
+          ['India', 8586],
+          ['Bhutan', 7570],
+          ['Tajikistan', 7495],
+		  ['Afghanistan', 7492],
+          ['Kyrgyzstan', 7439],
+          ['Kazakhstan', 7010],
+          ['Argentina', 6960],
+          ['Chile', 6893],
+		  ['Peru', 6768],
+          ['Bolivia', 6542],
+          ['Ecuador', 6267],
+          ['United States', 6194],
+		  ['Portugal', 1000]
+        ]);
+
+        var options = {};
+
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="regions_div" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>
